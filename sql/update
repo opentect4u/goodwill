@@ -1,0 +1,59 @@
+update Purchase_Items
+set comp_name = 9
+where comp_name = 'LIFE GUARD'
+
+update Purchase_Items
+set comp_name = 6
+where comp_name = 'LOTUS ENTERPRISES'
+
+update Purchase_Items
+set comp_name = 6
+where comp_name = 'LOTUS ENTERPRISES'
+
+update Purchase_Items
+set comp_name = 3
+where comp_name = 'NEW PUIJA MEDICAL AGENCY'
+
+update Purchase_Items
+set comp_name = 5
+where comp_name = 'MEDICON'
+
+
+update Purchase_Items
+set comp_name = 3
+where comp_name = 'NEW PUJA MEDICAL AGENCY'
+
+update Purchase_Items
+set comp_name = 8
+where comp_name = 'M/S SRIMANI BROTHERS'
+
+update Purchase_Items
+set comp_name = 11
+where comp_name = 'PROVA MEDICAL AGENCY'
+
+update Purchase_Items
+set comp_name = 8
+where comp_name = 'SRIMANI BROTHERS'
+
+update Purchase_Items
+set comp_name = 4
+where comp_name = 'ZEN CARA PHARMA'
+
+update Purchase_Items
+set comp_name = 6
+where comp_name = 'LOTAS ENTERPRISES'
+
+
+update Purchase_Items
+set comp_name = 7
+where comp_name = 'MONDAL -INDIA'
+
+
+update Purchase_Items
+set comp_name = 4
+where comp_name = 'ZEN CARE PHARMA'
+
+
+update Purchase_Items
+set comp_name = 10
+where comp_name = 'DOKANIA MEDICINE TRADERS'
