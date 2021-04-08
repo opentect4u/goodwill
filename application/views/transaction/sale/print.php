@@ -199,7 +199,14 @@ function printDiv() {
 			<td class="billDet" valign="top">
 				<dl>
   <dt>Bill No:</dt>
-  <dd> <?php echo $bill_no ; ?></dd>
+  <dd> <?php  $year= substr($bill_no,0,6) ;
+  				 $current = substr($year,0,4) ;
+  				 $next    = substr($year,4) ;
+  				 $bill = substr($bill_no,6) ;
+
+  				 echo $current.'-'.$next.'/'.$bill;
+
+   ?></dd>
   <dt>Bill Dt.:</dt>
   <dd> <?php foreach($data as $row);
                        $originalDate= $row->bill_dt;

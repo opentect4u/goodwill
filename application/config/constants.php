@@ -83,3 +83,16 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+define('END_ACC_DM', '0331');
+$current_year = date('Y') - 1;
+$previous_year = date('Y') - 2;
+$next_year = date('Y');
+if (date('Ymd') > date('Y') . END_ACC_DM) {
+   $current_year += 1;
+   $previous_year += 1;
+   $next_year += 1;
+}
+define('CURRENT_YEAR', $current_year);
+define('PREVIOUS_YEAR', $previous_year);
+define('NEXT_YEAR', $next_year);

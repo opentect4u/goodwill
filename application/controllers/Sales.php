@@ -136,11 +136,28 @@ class Sales extends CI_Controller {
             
             if($_SERVER['REQUEST_METHOD']=="POST"){
 
+
+                $next_yr = NEXT_YEAR . '0331';
+                if(date("Ymd") > $next_yr){
+                    $id= '1';
+                }else{
+
+                    $sessionyear    = substr(NEXT_YEAR,2);
+
+                    $saleIdDatas     = $this->Sale->sale_nos();
+
+                    $saleIdData     = CURRENT_YEAR.$sessionyear.$saleIdDatas->Sales_ID;
+                   
+                }
+
+
                 $user_id        = $this->session->userdata('login')->user_id;
-                $saleIdData     = $this->Sale->sale_no();
+                //$saleIdData     = $this->Sale->sale_no();
                 $in_out_type    = $_POST['in_out_type'];
                 $br_cd          = 1;
-                $saleId         = $saleIdData->Sales_ID;
+               // $saleId         = $saleIdData->Sales_ID;
+                $saleId         = $saleIdData;
+                $id             = $saleIdDatas->Sales_ID;
                 $comp_id        = 1;
                 $cust_name      = $_POST['cust_name'];
                 $doctor         = $_POST['doctor'];
@@ -163,7 +180,7 @@ class Sales extends CI_Controller {
                 $ph_no          = $_POST['ph_no'];
                 $gst_no         = $_POST['gst_no'];
                             
-                $this->Sale->insert_sales($saleId, $user_id,$comp_id, $prodid, $Unit,$Batch,$Expiry, $Max_Ret_Price,$Dis_Rate, $dis_amount, $GST_Rt,$qty,$Net_Price,$cgst,$sgst,$tot_amt,$in_out_type,$br_cd,$trans_dt,$cust_name ,$doctor ,$ph_no,$Unit_count,$gst_no);
+                $this->Sale->insert_sales($saleId,$id, $user_id,$comp_id, $prodid, $Unit,$Batch,$Expiry, $Max_Ret_Price,$Dis_Rate, $dis_amount, $GST_Rt,$qty,$Net_Price,$cgst,$sgst,$tot_amt,$in_out_type,$br_cd,$trans_dt,$cust_name ,$doctor ,$ph_no,$Unit_count,$gst_no);
             
         
             redirect('Sales/sales');

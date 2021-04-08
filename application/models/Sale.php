@@ -85,7 +85,17 @@ class Sale extends CI_Model{
       return $data->row();
        
   }
-  public function insert_sales($saleId, $user_id,$comp_id, $prodid, $Unit,$Batch,$Expiry, $Max_Ret_Price,$Dis_Rate, $dis_amount, $GST_Rt,$qty,$Net_Price,$cgst,$sgst,$tot_amt,$in_out_type,$br_cd,$trans_dt,$cust_name ,$doctor ,$ph_no,$Unit_count,$gst_no)
+
+  public function sale_nos(){
+
+      $data = $this->db->query("select ifnull(max(id),0)+1 as Sales_ID from sales_items");
+
+      return $data->row();
+       
+  }
+
+
+  public function insert_sales($saleId,$id, $user_id,$comp_id, $prodid, $Unit,$Batch,$Expiry, $Max_Ret_Price,$Dis_Rate, $dis_amount, $GST_Rt,$qty,$Net_Price,$cgst,$sgst,$tot_amt,$in_out_type,$br_cd,$trans_dt,$cust_name ,$doctor ,$ph_no,$Unit_count,$gst_no)
   {
   
     
@@ -93,6 +103,7 @@ class Sale extends CI_Model{
     {
       $value1 = array(
               'Sales_ID'      => $saleId,
+              'id'            => $id,
               'in_out_type'   => $in_out_type,
               'trans_dt'      => $trans_dt,
              'cust_name'     => $cust_name ,
